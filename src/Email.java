@@ -1,4 +1,6 @@
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Email {
 
@@ -6,6 +8,7 @@ public class Email {
     private String lastName;
     private String password;
     private String department;
+    private int defaultPasswordLength = 10;
     private int mailboxCapacity;
     private String alternateEmail;
 
@@ -14,8 +17,12 @@ public class Email {
         this.lastName = lastName;
         System.out.println("Email created --> FirstName : " + firstName +
                 " LastName : " + lastName);
+
         this.department = setDepartment();
         System.out.println("Department : " + this.department);
+
+        this.password = generatePassword(defaultPasswordLength);
+        System.out.println("Your Password : " + this.password);
     }
 
     private String setDepartment() {
@@ -33,5 +40,16 @@ public class Email {
         } else {
             return "";
         }
+    }
+
+    private String generatePassword(int length) {
+
+        String passwordSet = "ABCDEFGHIJKLMNOPRSTUWXVYZ1234567890!@#$%";
+        char[] password = new char[length];
+        for (int i = 0; i < length; i++) {
+            int random = (int) (Math.random() * passwordSet.length());
+            password[i] = passwordSet.charAt(random);
+        }
+        return new String(password);
     }
 }
