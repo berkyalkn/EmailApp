@@ -7,22 +7,29 @@ public class Email {
     private String firstName;
     private String lastName;
     private String password;
+    private String email;
     private String department;
     private int defaultPasswordLength = 10;
     private int mailboxCapacity;
     private String alternateEmail;
+    private final String COMPANY_SUFFIX = "company.com";
 
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("Email created --> FirstName : " + firstName +
+        System.out.println("FirstName : " + firstName +
                 " LastName : " + lastName);
 
         this.department = setDepartment();
         System.out.println("Department : " + this.department);
 
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
+                + "." + COMPANY_SUFFIX;
+        System.out.println("Your email : " + email);
+
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your Password : " + this.password);
+
     }
 
     private String setDepartment() {
