@@ -4,6 +4,7 @@ public class Main {
 
         Email berkay = new Email("Berkay", "Alkan");
 
+
 //        berkay.setMailboxCapacity(400);
 //        berkay.changePassword("berkay07");
 //        berkay.setAlternateEmail("berky.alknn@gmail.com");
@@ -13,5 +14,6 @@ public class Main {
 //        System.out.println(berkay.getAlternateEmail());
 
         System.out.println(berkay.showInfo());
+
     }
 }

@@ -23,6 +23,11 @@ public class Email {
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
                 + "." + COMPANY_SUFFIX;
 
+        this.department = setDepartment();
+
+        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
+                + "." + COMPANY_SUFFIX;
+
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your Password : " + this.password);
 
@@ -32,6 +37,7 @@ public class Email {
 
         System.out.print("Enter the department\n1 for Sales\n2 for Development" +
                 "\n3 for Accounting\n0 for none\nEnter department code : ");
+
         Scanner scanner = new Scanner(System.in);
         int departmentChoice = scanner.nextInt();
         if (departmentChoice == 1) {
@@ -43,7 +49,6 @@ public class Email {
         } else {
             return "";
         }
-
     }
 
     private String generatePassword(int length) {
