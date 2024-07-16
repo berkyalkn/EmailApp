@@ -17,15 +17,11 @@ public class Email {
     public Email(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        System.out.println("FirstName : " + firstName +
-                " LastName : " + lastName);
 
         this.department = setDepartment();
-        System.out.println("Department : " + this.department);
 
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
                 + "." + COMPANY_SUFFIX;
-        System.out.println("Your email : " + email);
 
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your Password : " + this.password);
@@ -35,7 +31,7 @@ public class Email {
     private String setDepartment() {
 
         System.out.print("Enter the department\n1 for Sales\n2 for Development" +
-                "\n3 for Accounting\n0 for none");
+                "\n3 for Accounting\n0 for none\nEnter department code : ");
         Scanner scanner = new Scanner(System.in);
         int departmentChoice = scanner.nextInt();
         if (departmentChoice == 1) {
@@ -47,6 +43,7 @@ public class Email {
         } else {
             return "";
         }
+
     }
 
     private String generatePassword(int length) {
@@ -81,5 +78,11 @@ public class Email {
     }
     public String getPassword() {
         return password;
+    }
+
+    public String showInfo() {
+        return "NAME: " + firstName + " " + lastName +
+                "\nEMAIL: " + email +
+                "\nMAILBOX CAPACITY: " + mailboxCapacity;
     }
 }
