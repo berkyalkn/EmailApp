@@ -23,9 +23,6 @@ public class Email {
         email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
                 + "." + COMPANY_SUFFIX;
 
-        email = firstName.toLowerCase() + "." + lastName.toLowerCase() + "@" + department.toLowerCase()
-                + "." + COMPANY_SUFFIX;
-
         this.password = generatePassword(defaultPasswordLength);
         System.out.println("Your Password : " + this.password);
 
